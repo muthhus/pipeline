@@ -9,7 +9,7 @@ public class PipelineController {
 
     @RequestMapping("/")
     public String home(Model model){
-        model.addAttribute("Pipeline", "Home");
+        model.addAttribute("Pipeline", "Thanks for attending this meeting  and much appreciated!");
         return "index";
     }
 }
