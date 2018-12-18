@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>org.cap.hr.pipeline.poc</groupId>
 	<artifactId>pipeline</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>pipeline</name>
 	<description>Build and Release Pipeline poc</description>
