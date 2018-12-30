@@ -8,14 +8,17 @@ import org.cap.hr.pipeline.poc.vo.UserVO;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.UUID;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 
 @RunWith(MockitoJUnitRunner.class)
@@ -39,11 +42,11 @@ public class UserDAOTest {
 
     @Test
     public void saveTest() throws Exception {
-        User user = new User();
-        user.setUuid(UUID.randomUUID().toString());
-        user.setFirstName("Shan");
-        userRepository.save(user);
-        verify(userRepository).save(user);
+        ArgumentCaptor<UserVO> userArgumentCaptor = ArgumentCaptor.forClass(UserVO.class);
+
+        userService.userSave(userArgumentCaptor.capture());
+
+        verify(userService).userSave(userArgumentCaptor.capture());
     }
 
     @Test
